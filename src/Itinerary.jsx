@@ -1,8 +1,27 @@
-import { useState } from 'react'
-
-import { schedule } from './info'
+import { schedule } from "./info"
 
 export default function Itinerary() {
+
+  const timeline = Object.entries(schedule).map(([key, value]) => (
+    <section key={key}>
+      {value.map(({ detail, icon: Icon, title, time }) => (
+        <article className="timeline-item" key={title}>
+          <div className="timeline-icon">
+            <Icon size={20} />
+          </div>
+
+          <div className="timeline-copy">
+            <span>{time}</span>
+            <h3>{title}</h3>
+            <p>{detail}</p>
+          </div>
+
+          <span className="timeline-star">✦</span>
+        </article>
+      ))}
+    </section>
+  ))
+
   return (
     <>
       <div className="wrap">
@@ -15,26 +34,8 @@ export default function Itinerary() {
         </div>
 
         <div className="timeline">
-          {schedule.map((item, index) => {
-            const Icon = item.icon
-            return
-            ;<article className="timeline-item" key={item.title}>
-              <div className="timeline-index">0{index + 1}</div>
-              <div className="timeline-icon">
-                <Icon size={20} />
-              </div>
-              <div className="timeline-copy">
-                <span>{item.time}</span>
-                <h3>{item.title}</h3>
-                <p>{item.detail}</p>
-              </div>
-              <span className="timeline-star">✦</span>
-            </article>
-          })}
+          {timeline}
         </div>
-        <p className="schedule-note">
-          * Times are spooky placeholders. Swap in your real plans before sharing.
-        </p>
       </div>
     </>
   )

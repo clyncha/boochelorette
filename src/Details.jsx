@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import { CalendarDays, Check, Clock3, Copy, Ghost, MapPin } from 'lucide-react'
+import { useState } from 'react';
+import { details } from './info';
+import { CalendarDays, Check, Copy, Ghost, MapPin } from 'lucide-react';
 
 export default function Details() {
   const [copied, setCopied] = useState(false)
   const copyDetails = async () => {
-    const details = 'BOOCHELORETTE ✦ October 24–26, 2026 ✦ Salem, MA ✦ Black attire encouraged'
+    const details =  `BOOCHELORETTE ✦ ${details.dates} ✦ `
     try {
       await navigator.clipboard.writeText(details)
       setCopied(true)
@@ -31,7 +32,7 @@ export default function Details() {
       </div>
       <div className="event-card">
         <div className="card-top">
-          <span>YOU’RE INVITED · EDIT SAMPLE DETAILS BEFORE SHARING</span>
+          <span>YOU’RE INVITED</span>
           <Ghost size={20} />
         </div>
         <div className="event-name">Courtney’s Boochelorette</div>
@@ -43,24 +44,16 @@ export default function Details() {
             <CalendarDays />
             <div>
               <small>WHEN</small>
-              <strong>October 24–26, 2026</strong>
-              <span>Friday to Sunday</span>
+              <strong>{details.dates}</strong>
+              <span>{details.days}</span>
             </div>
           </div>
           <div>
             <MapPin />
             <div>
               <small>WHERE</small>
-              <strong>Salem, Massachusetts</strong>
-              <span>Meet us where the magic lives</span>
-            </div>
-          </div>
-          <div>
-            <Clock3 />
-            <div>
-              <small>DRESS CODE</small>
-              <strong>Midnight chic</strong>
-              <span>Black, lace, velvet, and a little drama</span>
+              <strong>{details.location}</strong>
+              <span>Join us for a Boo-tiful spa retreat to celebrate Courtney!</span>
             </div>
           </div>
         </div>

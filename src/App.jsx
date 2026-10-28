@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { ArrowDown, Ghost } from 'lucide-react'
 
 import Banner from './Banner'
@@ -50,7 +49,7 @@ export default function App() {
           <Ghost size={19} /> BOOCHELORETTE
         </a>
         <span>MADE WITH LOVE & A LITTLE ectoplasm</span>
-        <span>© 2026 — UNTIL DEATH</span>
+        <span>© 2027 — UNTIL DEATH</span>
       </footer>
     </main>
   )

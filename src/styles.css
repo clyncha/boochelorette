@@ -68,7 +68,7 @@ button {
 }
 .nav-link {
   display: flex;
-  gap: 9px;
+  gap: 10px;
   align-items: center;
   font: 10px var(--mono);
   letter-spacing: 0.12em;
@@ -414,8 +414,8 @@ h2 em {
   position: relative;
   border: 1px solid #65575a;
   background: #191616;
+  height: 400px;
   padding: 30px 34px;
-  min-height: 400px;
   overflow: hidden;
 }
 .event-card:before {
@@ -546,7 +546,7 @@ h2 em {
 }
 .timeline-item {
   display: grid;
-  grid-template-columns: 42px 45px 1fr 20px;
+  grid-template-columns: 45px 1fr 20px;
   align-items: center;
   gap: 18px;
   padding: 24px 0;
@@ -694,6 +694,10 @@ h2 em {
 .rsvp-content > p {
   margin: 0 auto 25px;
 }
+.rsvp-form {
+  display: inline-grid;
+  gap: 10px;
+}
 .rsvp-button {
   min-width: 190px;
 }
@@ -774,8 +778,8 @@ h2 em {
     padding-bottom: 80px;
   }
   .event-card {
-    padding: 25px 22px;
-    min-height: 405px;
+    height: 400px;
+    padding: 20px;
   }
   .event-name {
     font-size: 32px;
