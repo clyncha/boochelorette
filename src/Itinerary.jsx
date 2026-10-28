@@ -4,6 +4,7 @@ export default function Itinerary() {
 
   const timeline = Object.entries(schedule).map(([key, value]) => (
     <section key={key}>
+      <h2>{key}</h2>
       {value.map(({ detail, icon: Icon, title, time }) => (
         <article className="timeline-item" key={title}>
           <div className="timeline-icon">
